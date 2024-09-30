@@ -4,21 +4,21 @@
             <td>
                 <label for="nome">Seu nome:</label>
             </td><td>
-                <input id="nome" name="nome" type="text" minlength="8" maxlength="31" placeholder="joao da silva" />
+                <input id="nome" name="nome" type="text" minlength="8" maxlength="31" placeholder="joao da silva" required />
             </td>
         </tr>
         <tr>
             <td>
                 <label for="email">Seu email:</label>
             </td><td>
-                <input id="email" name="email" type="email" minlength="8" maxlength="31" placeholder="usuario@dominio.com" />
+                <input id="email" name="email" type="email" minlength="8" maxlength="31" placeholder="usuario@dominio.com" required />
             </td>
         </tr>
         <tr>
             <td>
                 <label for="senha">Sua senha:</label>
             </td><td>
-                <input id="senha" name="senha" type="password" minlength="8" maxlength="31" />
+                <input id="senha" name="senha" type="password" minlength="8" maxlength="31" required />
             </td>
         </tr>
         <tr>
@@ -34,6 +34,8 @@
     margin:0;
     padding:0;
     box-sizing:padding-box;
+    font-family:system-ui;
+    font-size:16px;
 }
 html,body{
     height:100%;
@@ -50,11 +52,13 @@ td{
     padding:1px;
 }
 td *{
-    width:100%;
-    height:100%;
+    display:block;
+    min-width:100%;
+    min-height:100%;
 }
 td input:is([type=text],[type=email],[type=password]){
     border:1px solid #00f;
+    padding:4px 8px;
 }
 input:focus{
     outline:0;
