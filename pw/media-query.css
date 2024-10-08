@@ -1,0 +1,76 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: system-ui;
+}
+/*cabeçalho*/
+header {
+    padding: 10px;
+    background-color: rgb(191 96 13);
+    color: aliceblue;
+}
+header img {
+    display: none;
+}
+h1 {
+    text-align: center;
+}
+/*conteúdo*/
+h2 {
+    font-size: 30px;
+    padding-left: 10px;
+}
+div {
+    padding: 5px;
+}
+div p {
+    text-align: justify;
+}
+div img {
+    width: 100%;
+}
+/*impressora*/
+@media print {
+    h1 {
+        color: black;
+    }
+    p {
+        font-size: 0.5cm;
+    }
+    div img {
+        width: 50%;
+        margin-top: 10px;
+    }
+    main {
+        width: 80%;
+        margin: auto;
+    }
+}
+/*telas sd 480x640*/
+@media screen and (min-width: 640px) and (min-height: 480px) {
+    {}
+}
+/*telas hd 1280x720*/
+@media screen and (min-width: 1280px) and (min-height: 720px) {
+    header {
+        display: flex;
+    }
+    header img {
+        display: inline;
+        width: 40%;
+    }
+    section div {
+        display: flex;
+    }
+    div img {
+        width: 30%;
+    }
+}
+/*telas full hd 1920x1080*/
+@media screen and (min-width: 1920px) and (min-height: 1080px) {
+    {}
+}
+/*telas 4k*/
+@media screen and (min-width: px) and (min-height: px) {
+    {}
+}
