@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+<style>
+html{
+height:100%;
+font-size:2rem;
+--cor-primaria:#00f;
+--cor-secundaria:#fa0;
+--cor-fundo:#fff;
+--cor-sombra:#00000080;}
+body{
+margin:0;
+height:100%;
+box-sizing:border-box;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+align-items:streetch;}
+.c{
+display:flex;
+justify-content:space-evenly;
+align-items:center;
+background-color:#286687;
+box-shadow:inset 0 -1.7em 1em -1em #00314d,0 0 .7em -.2em var(--cor-sombra);}
+& :first-child{
+justify-content:start;
+border-bottom-left-radius:.5em;
+border-bottom-right-radius:.5em;}
+& :last-child{
+border-top-left-radius:.5em;
+border-top-right-radius:.5em;}
+.p{
+display:flex;
+flex-grow:0;
+margin:0 .5em;
+padding:.2em;
+padding-right:.5em;
+//justify-content:start;
+align-items:center;
+gap:.5em;
+background-color:var(--cor-fundo);
+border-radius:999em;}
+.i{
+font-size:.8em;}
+.t{
+border:0;
+outline:0;
+font-size:.7em;
+color:#000;
+&::placeholder{
+font-size:.8em;
+color:var(--cor-sombra);}}
+.b{
+display:inline-block;
+padding:.25em;
+margin:.3em;
+color:var(--cor-primaria);
+background-color:var(--cor-fundo);
+box-shadow:.07em .1em .3em -.07em var(--cor-sombra);
+border-radius:999em;
+user-select:none;
+transition:color.07s,scale.07s;
+&:active{
+scale:1.07;}}
+form{
+margin:0;
+padding:0;
+width:min-content;
+height:min-content;}
+
+#inicio,#web,#explorar,#notificacoes,#opcoes{
+display:block;/*
+&:target{
+display:block;}*/}
+
+:has(#inicio:target){
+& #inicio{
+display:block;}
+& #web,#explorar,#notificacoes,#opcoes{
+display:none;}}
+
+:has(#web:target){
+& #web{
+display:block;}
+& #inicio,#explorar,#notificacoes,#opcoes{
+display:none;}}
+
+:has(#explorar:target){
+& #explorar{
+display:block;}
+& #inicio,#web,#notificacoes,#opcoes{
+display:none;}}
+
+:has(#notificacoes:target){
+& #notificacoes{
+display:block;}
+& #inicio,#web,#explorar,#opcoes{
+display:none;}}
+
+:has(#opcoes:target){
+& #opcoes{
+display:block;}
+& #inicio,#web,#explorar,#notificacoes{
+display:none;}}
+</style>
+<script>
+location.hash="#inicio"
+document.addEventListener("DOMContentLoaded",function(e){
+const bpainel=document.getElementById("p")
+bpainel.addEventListener("click",function(e){console.log("abrir painel");location.hash="painel"})
+const binicio=document.getElementById("i")
+binicio.addEventListener("click",function(e){console.log("meu inicio");location.hash="inicio"})
+const bweb=document.getElementById("w")
+bweb.addEventListener("click",function(e){console.log("world wide web");location.hash="web"})
+const bexplorar=document.getElementById("e")
+bexplorar.addEventListener("click",function(e){console.log("ir explorar");location.hash="explorar"})
+const bnotificacao=document.getElementById("n")
+bnotificacao.addEventListener("click",function(e){console.log("ver notificacoes");location.hash="notificacoes"})
+const bopcao=document.getElementById("o")
+bopcao.addEventListener("click",function(e){console.log("ajustar opcoes");location.hash="opcoes"})
+const form=document.getElementById("f")
+form.addEventListener("submit",function(e){console.log(e.target[0].value)})
+})</script>
+</head>
+<body>
+<div class="c">
+<div id="p" class="b">🟰</div>
+<div class="p">
+<div class="i">🔍</div>
+<form method="dialog" id="f">
+<input class="t" placeholder="Pesquisar..."/>
+</form>
+</div>
+</div>
+<div id="inicio">menu</div>
+<div id="web">www</div>
+<div id="explorar">descobrir</div>
+<div id="notificacoes">alertas</div>
+<div id="opcoes">ajustes</div>
+<div class="c">
+<div id="i" class="b">🏠</div>
+<div id="w" class="b">🌐</div>
+<div id="e" class="b">🔍</div>
+<div id="n" class="b">🔔</div>
+<div id="o" class="b">⚙️</div>
+</div>
+</body>
+</html>
